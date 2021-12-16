@@ -66,23 +66,47 @@ function tenth(){
 }
 
 function eleventh(){
-    let arr = {
+    let langType = {
         'ru': ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"],
         'en': ["Monday", "Thuesday", "Wednesday", "Thirdsday", "Friday", "Saturday", "Sunday"],
     }
-    alert(arr.ru[0]);
-    alert(arr.en[2]);
+    alert(langType.ru[0]);
+    alert(langType.en[2]);
 }
 
-// first();
-// second();
-// third();
-// fourth();
-// fifth();
-// sixth();
-// seventh();
-// eighth();
-// ninth();
-// tenth();
+function twelfth(){
+    let langType = {
+        ru: ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"],
+        en: ["Monday", "Thuesday", "Wednesday", "Thirdsday", "Friday", "Saturday", "Sunday"],
+    }
+    
+    let lang = prompt("Введите тип локализации");
+    let day = prompt("Введите номер дня");
+    alert(langType[lang][+day])
+}
+
+first();
+second();
+third();
+fourth();
+fifth();
+sixth();
+seventh();
+eighth();
+ninth();
+tenth();
 eleventh();
+twelfth();
+
+/*
+Контрольные вопросы
+1. Массив - нужен для того, чтобы хранить и группировать в нем данные. Чаще всего это данные одного типа.
+2. Массивы можно создать как:
+let arr = [1,2,3,4,5];
+new Array(element0, element1[, ...[, elementN]])
+new Array(arrayLength)
+3. 
+*/
+
+
 
