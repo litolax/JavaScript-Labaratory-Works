@@ -29,9 +29,9 @@ function first(){
         else alert("Неверно");
     }
 
-    for(let i = 0; i < 3; i++){ // !== 0
+    for(let i = 0; i < 3; i++){ // != 0
         const a = prompt("Введите \'a\' (!== 0)");
-        if (a !== 0) alert("Верно");
+        if (a != 0) alert("Верно");
         else alert("Неверно");
     }
 
@@ -91,14 +91,14 @@ function fourth(){
 function fifth(){
     let a = prompt("Введите a");
     let b = prompt("Введите b");
-    if (a <= 1 && b >= 3) alert(a + b);
+    if (a <= 1 && b >= 3) alert(+a + +b);
     else alert(a - b);
 }
 
 function sixth(){
     let num = prompt("Введите num");
     let result = undefined;
-    switch(num){
+    switch(+num){
         case 1: {
             result = 'зима';
             break;
@@ -143,25 +143,68 @@ function ninth(){
 
 function tenth(){
     let str = '12345';
-    if (str[0] === '1' || str[0] === '2' || str[0] === '3') alert("Да");
-    else alert("Нет");   
+    switch(str[0]) {
+        case '1':
+        case '2':
+        case '3': {
+            alert("Да");
+            break;
+        }
+        default: {
+            alert("Нет");
+            break;
+        }
+    }  
 }
 
 function eleventh(){
-    var str = 'abcde';
-    alert(str[0] + ' ' + str[2] + ' ' + str[4])
+    let str = '427';
+    let sum = 0;
+    for(let i = 0; i < str.length; i++) {
+        sum += +str[i];
+    }
+    alert("Сумма = " + sum);
+}
+
+function twelfth() {
+    let str = '436534';
+    let firstSum = 0;
+    let secondSum = 0;
+
+    for(let i = 0; i < 3; i++) {
+        firstSum += +str[i];
+        secondSum += +str[i + 3];
+    }
+
+    if (firstSum === secondSum) alert("Да");
+    else alert("Нет");
 }
 
 
-// first();
-// second();
-// third();
-// fourth();
-// fifth();
-// sixth();
-// seventh();
-// eighth();
-// ninth();
-// tenth();
+first();
+second();
+third();
+fourth();
+fifth();
+sixth();
+seventh();
+eighth();
+ninth();
+tenth();
 eleventh();
-// twelfth();
+twelfth();
+
+/*
+Контрольные вопросы
+1. Операторы ветвления нужны для выполнения определённого блока действий при определённом условии.
+2. == - это не строгое сравнение, а === - строгое типовое сравнение. Для примера:
+let a = '1';
+let b = 1;
+if (a == b) alert(...) // код выполнится
+if (a === b) alert(...) // код не выполнится, так как они разные по типу.
+3. Принцип действия похож на вопрос 2. Строгое и не строгое 'не равно'.
+!= выполнится если переменные не равны.
+!== выполнится если переменные не равны или у них разные типы.
+4. if-else это оператор ветвления, который лучше использовать когда нам требуется проверить несколько условий.
+Если нам нужно проверить одинаковую прееменную на одно разное условие, то мы используем switch-case.
+*/
