@@ -119,7 +119,39 @@ function sixth(){
     alert(result);
 }
 
-function 
+function seventh(){
+    let day = Math.floor(Math.random() * 31);
+    if (day <= 10) alert("Первая декада");
+    else if (day >= 11 && day <= 20) alert("Вторая декада");
+    else alert("Третья декада");
+}
+
+function eighth(){
+    let month = Math.floor(Math.random() * 12) + 1;
+    console.log(month);
+    if ((month >= 1 && month <= 2) || month === 12) alert('Зима');
+    else if (month >= 3 && month <= 5) alert('Весна');
+    else if (month >= 6 && month <= 8) alert('Лето');
+    else if (month >= 9 && month <= 111) alert('Осень');
+}
+
+function ninth(){
+    let str = 'abcde';
+    if (str[0] === 'a') alert("Да");
+    else alert("Нет");
+}
+
+function tenth(){
+    let str = '12345';
+    if (str[0] === '1' || str[0] === '2' || str[0] === '3') alert("Да");
+    else alert("Нет");   
+}
+
+function eleventh(){
+    var str = 'abcde';
+    alert(str[0] + ' ' + str[2] + ' ' + str[4])
+}
+
 
 // first();
 // second();
@@ -131,5 +163,5 @@ function
 // eighth();
 // ninth();
 // tenth();
-// eleventh();
+eleventh();
 // twelfth();
