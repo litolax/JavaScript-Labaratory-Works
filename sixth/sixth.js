@@ -2,7 +2,7 @@ function isEquals(first, second) {
     return first === second;
 }
 
-function SumMoreThanTen(first, second) {
+function sumMoreThanTen(first, second) {
     if ((first + second) > 10) return true;
     return false;
 }
@@ -13,13 +13,14 @@ function isNegative(first) {
 }
 
 function first() {
-    let str;
+    let str = ``;
 
     for (let i = 1; i < 10; i++) {
         str += i;
     }
 
     alert(str);
+    str = ``;
 
     for (let i = 9; i > 0; i--) {
         str += i;
@@ -28,7 +29,7 @@ function first() {
     alert(str);
 
     str = "-";
-    for (let i = 1; i > 10; i--) {
+    for (let i = 1; i < 10; i++) {
         str += `${i}-`;
     }
 
@@ -137,4 +138,45 @@ function reverseArr(){
     console.log(`Новый массив: ${buffer}`);
 }
 
+function sumOfTwoArrays() {
+    let arr = [[1, 2, 3], [4, 5], [6]];
+    let sum = 0;
+
+    for(let i = 0; i < arr.length; i++) {
+        for(let j = 0; j < arr[i].length; j++) {
+            sum += arr[i][j];
+        }
+    }
+
+    console.log(`Сумма = ${sum}`);
+}
+
+function sumOfThreeArrays() {
+    let arr = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]];
+    let sum = 0;
+
+    for(let i = 0; i < arr.length; i++) {
+        for(let j = 0; j < arr[i].length; j++) {
+            for(let g = 0; g < arr[i][j].length; g++) {
+                sum += arr[i][j][g];
+            }
+        }
+    }
+
+    console.log(`Сумма = ${sum}`);
+}
+
+alert(isEquals(5, 5)) // true
+alert(sumMoreThanTen(7, 5)); // true
+alert(isNegative(-5)) // true
+first();
+pyramid();
+pyramidOfNumbers();
+pyramidSecond();
+fillArrByX();
+fillArrByNumbers();
+arrayFill(`$`, 5);
+sumBeforeTen();
 reverseArr();
+sumOfTwoArrays();
+sumOfThreeArrays();
