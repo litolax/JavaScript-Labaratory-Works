@@ -139,12 +139,7 @@ twelveth(element);
 // 13. Даны абзацы с числами. Сделайте так, чтобы по нажатию на абзац начинал тикать таймер, который каждую секунду будет увеличивать 
 // на единицу число в этом абзаце. По нажатию на другой абзац должно происходить то же самое - он тоже начнет тикать.
 
-let elements = [];
-for (let i = 1; i <= 4; i++) {
-    elements[i-1] = document.getElementById(i.toString())
-}
-
-for (const elem of elements) {
+for (const elem of document.querySelectorAll("p")) {
     elem.addEventListener("click", () => {
         setInterval(() => {
             elem.innerText = +elem.innerText + 1;
