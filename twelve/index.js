@@ -102,5 +102,28 @@ console.log(str.reverse('abcde')); //выведет 'edcba'
 console.log(str.ucFirst('abcde')); //выведет 'Abcde'
 console.log(str.ucWords('abcde abcde abcde')); //выведет 'Abcde Abcde Abcde'
 
-console.log('a+x ax aax aaax'.replace(/\S\W+/g, '!'))
+function Validator() {
+    this.isEmail = function(str) {
+        if (/[a-z0-9]{2,}\@[a-z]{2,}\.[a-z]{2,3}/.test(str)) return true;
+        else return false;
+    }
+    this.isDomain = function(str) {
+        if (/[a-z0-9]{2,}\.[a-z0-9]{2,3}/.test(str)) return true;
+        else return false
+    }
+    this.isDate = function(str) {
+        if (/[0-9]{2}\.[0-9]{2}\.[0-9]{4}/.test(str)) return true;
+        else return false;
+    }
+    this.isPhone = function(str) {
+        if (/\+[0-9]{3}\s\([0-9]{2}\)\s[0-9]{3}\-[0-9]{2}\-[0-9]{2}/.test(str)) return true;
+        else return false;
+    }
+}
+
+let validator = new Validator();
+console.log(validator.isEmail("phphtml@mail.ru"));
+console.log(validator.isDomain("phphtml.net"));
+console.log(validator.isDate("12.05.2020"));
+console.log(validator.isPhone("+375 (29) 817-68-92"))
 
