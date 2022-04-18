@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="leftButtonFirst"><-</button>
+    <button id="rightButtonFirst">-></button>
+    <br>
+    <input id = "firstInput">
+    <br>
+    <br>
+    <button id="leftButtonSecond"><-</button>
+    <button id="rightButtonSecond">-></button>
+    <br>
+    <input id="secondInput">
+    <br>
+    <br>
+    
+    <script>
+        let firstInput = document.getElementById("firstInput");
+        let secondInput = document.getElementById("secondInput");
+        let firstInputHistory = [];
+        let secondInputHistory = [];
+        let firstI = 0;
+        let secondI = 0;
+
+        function FirstInputHistory(e) {
+            firstInputHistory.push(e.target.value)
+            console.log(firstInputHistory)
+        }
+        function SecondInputHistory(e) {
+            secondInputHistory.push(e.target.value)
+        }
+        firstInput.addEventListener("change", FirstInputHistory)
+        secondInput.addEventListener("change", SecondInputHistory)
+
+        let leftButtonFirst = document.getElementById("leftButtonFirst");
+        let rightButtonFirst = document.getElementById("rightButtonFirst");
+        let leftButtonSecond = document.getElementById("leftButtonSecond");
+        let rightButtonSecond = document.getElementById("rightButtonSecond");
+
+        leftButtonFirst.addEventListener("click", () => {
+            firstI = firstI - 1 < 0 ? 0 : firstI - 1;
+            firstInput.value = firstInputHistory[firstI];
+        })
+
+        rightButtonFirst.addEventListener("click", () => {
+            firstI = firstI + 1 == firstInputHistory.length ? firstI : firstI + 1;
+            firstInput.value = firstInputHistory[firstI];
+        })
+        
+        leftButtonSecond.addEventListener("click", () => {
+            secondI = secondI - 1 < 0 ? 0 : secondI - 1;
+            secondInput.value = secondInputHistory[secondI];
+        })
+
+        rightButtonSecond.addEventListener("click", () => {
+            secondI = firstI + 1 == secondInputHistory.length ? secondI : secondI + 1;
+            secondInput.value = secondInputHistory[secondI];
+        })
+    </script>
+</body>
+</html>
