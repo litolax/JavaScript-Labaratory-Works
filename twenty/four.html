@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input1">
+    <input id="input2">
+    <p id="p">0</p>
+    <a id="ref">Сумма чисел</a>
+    <script>
+        let input1 = document.getElementById('input1')
+        let input2 = document.getElementById('input2')
+        let p = document.getElementById('p')
+
+        let ref = document.getElementById('ref')
+        ref.addEventListener("click", () => {
+            p.innerText = (+input1.value + +input2.value)
+        })
+    </script>
+</body>
+</html>

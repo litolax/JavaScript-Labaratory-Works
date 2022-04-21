@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a id='ref1' href="https://google.com" onclick="return false;">google.com</a>
+    <a id='ref2' href="https://youtube.com" onclick="return false;">youtube.com</a>
+    <script>
+        let ref1 = document.getElementById('ref1')
+        let ref2 = document.getElementById('ref2')
+        ref1.addEventListener("click", () => {
+            ref1.innerText += ref1.href
+        })
+        ref2.addEventListener("click", () => {
+            ref2.innerText += ref2.href
+        })
+    </script>
+</body>
+</html>
